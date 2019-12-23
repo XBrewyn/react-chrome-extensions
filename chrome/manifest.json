@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Your Extension's Name",
+  "short_name": "Your Extensions 'Short Name'",
+  "version": "1.0.0",
+  "description": "Your extensions description",
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "browser_action": {
+    "default_title": "Chrome Extension Boilerplate",
+    "default_popup": "index.html"
+  },
+  "permissions": []
+}
