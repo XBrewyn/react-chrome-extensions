@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { manifest } from '../utils/helperFunctions';
 
 const App = () => {
-  const [title, setTitle] = useState('Hello World React');
+  const [title] = useState('Hello World React');
+
+  useEffect(() => {
+    manifest();
+  });
 
   return (
     <h1>{title}</h1>

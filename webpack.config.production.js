@@ -1,8 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const WebpackExtensionManifestPlugin = require('webpack-extension-manifest-plugin');
+const baseManifest = require('./chrome/manifest.json');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   devtool: 'cheap-module-source-map',
 
   entry: {
@@ -43,9 +46,26 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin(
       {
+        manifest: 'manifest.json',
         filename: 'index.html',
         template: './frontend/index.html',
         hash: true,
+      },
+    ),
+
+
+    new CopyPlugin([
+      {
+        from: path.join(__dirname, './chrome/icons'),
+        to: path.resolve(__dirname, './build'),
+      },
+    ]),
+
+    new WebpackExtensionManifestPlugin(
+      {
+        config: {
+          base: baseManifest,
+        },
       },
     ),
   ],

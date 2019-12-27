@@ -25,13 +25,17 @@
 
    `npm start`
    
- - Add extensions to chrome
-    
-     a) Open the Google Chrome and typing the URL in the address bar `chrome://extensions/` 
-     
-     b) Click on `load unpacked`
-     
-     c) Select the folder `build` inside the `react-chrome-extensions folder`
+ ## Add the extension to Chrome
+
+  - `npm run build`
+
+  - Open the Google Chrome and typing the URL in the address bar `chrome://extensions/` 
+
+  - Turn on Developer mode
+
+  - Click on `load unpacked`
+
+  - Select the folder `build` inside the `react-chrome-extensions folder`
      
 ## Folder Structure
 
